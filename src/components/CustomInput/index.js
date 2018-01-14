@@ -5,6 +5,8 @@ export default class CustomInput extends Component {
   render() {
     return (
       <TextInput
+        secureTextEntry={this.props.secureTextEntry}
+        keyboardType={this.props.keyboardType}
         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
         onChangeText={() => {}}
         placeholder={this.props.placeholder}
