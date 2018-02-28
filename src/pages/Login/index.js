@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, Dimensions } from 'react-native';
+import { View, Text, Image, Dimensions,TouchableOpacity } from 'react-native';
 import TULogo from '../../Images/Logo.png'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
@@ -10,24 +10,31 @@ const { width } = Dimensions.get('window');
 class Login extends React.Component {
     render() {
         return (
-            <View style={{ flexDirection:'column', backgroundColor:"white", flex:1 }}>
+            <View style={{ flexDirection: 'column', backgroundColor: "white", flex: 1 }}>
                 <Image source={Bg}
-                    style={{ flexDirection:'column', position: 'absolute',width: '100%', height: '100%', resizeMode: 'stretch' }}
+                    style={{ flexDirection: 'column', position: 'absolute', width: '100%', height: '100%', resizeMode: 'stretch' }}
                 >
                 </Image>
-                <View style={{ padding: 30 }}>
-                    <Image source={TULogo} style={{ maxWidth: width - 100  ,alignSelf :'center'}} ImageResizeMode="repeat"/>
+                <View style={{ padding: 30, paddingTop: 0 }}>
+                    <Image source={TULogo} style={{ maxWidth: width - 100, alignSelf: 'center' }} ImageResizeMode="repeat" />
                     <View style={{ paddingVertical: 10 }}>
-                        <CustomInput placeholder="Username" keyboardType="numeric" secureTextEntry={false}/>
+                        <CustomInput placeholder="Username" keyboardType="numeric" secureTextEntry={false} />
                     </View>
                     <View style={{ paddingVertical: 10 }}>
-                        <CustomInput placeholder="Password" keyboardType="numeric" secureTextEntry={true}/>
+                        <CustomInput placeholder="Password" keyboardType="numeric" secureTextEntry={true} />
                     </View>
                     <View style={{ paddingVertical: 10 }}>
-                        <CustomButton onPressBtn ={() => { alert('login') }}  btnName="Login"/>
+                        <TouchableOpacity
+                            style={{ backgroundColor: '#ae5945', padding: 15, borderRadius: 15, alignItems: 'center' }}
+                            onPress={() => { alert('login') }}
+                        >
+                            <Text style={{ color: 'white', fontSize: 20 }}>
+                                Login via authen app
+                            </Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
-            </View>                
+            </View>
         )
     }
 }

@@ -14,14 +14,16 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
+
         <Stack key='root'>
-          <Scene key='login' component={Login} title='Login'/>
-          <Scene key='Description' component={Description} title='Title'/>
-          <Scene key='Joined' component={Joined} title='Joined'/>
-          <Scene key='CreateEvent' component={CreateEvent} title='CreateEvent' initial={true}/>
-          <Scene key='Home' component={Home} title='Home'/>
-          <Scene key='Main' component={Main} title='Main'/>
+          <Scene key='login' hideNavBar component={Login}/>
+          <Scene key='Description' hideNavBar component={Description} />
+          <Scene key='Joined' hideNavBar component={Joined}/>
+          <Scene key='CreateEvent'hideNavBar component={CreateEvent}  />
+          <Scene key='Home' hideNavBar component={Home}/>
+          <Scene key='Main' hideNavBar component={Main}  initial={true}/>
         </Stack>
+        
       </Router>
     );
   }
